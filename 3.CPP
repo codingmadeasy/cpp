@@ -1,0 +1,34 @@
+//Passing and returning objects in member function
+#include<iostream.h>
+#include<conio.h>
+class abc
+{
+	int a,b;
+	public:
+	void set(int x,int y)
+	{
+		a=x;
+		b=y;
+	}
+	void put()
+	{
+		cout<<"a = "<<a<<endl<<"b = "<<b<<endl;
+	}
+	abc add(abc k) //it is called by ob1 so a & b are of ob1
+	{
+		abc t;
+		t.a=a+k.a;
+		t.b=b+k.b;
+		return t;
+	}
+};
+void main()
+{
+	abc ob1,ob2,ob3;
+	clrscr();
+	ob1.set(10,20);
+	ob2.set(100,200);
+	ob3=ob1.add(ob2);
+	ob3.put();
+	getch();
+}
